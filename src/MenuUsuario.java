@@ -9,7 +9,9 @@ public class MenuUsuario {
         String inputMenu = "0";
 
         while (!inputMenu.equals("7")) {
-            cantidadCalculada = null;
+            String monedaOrigen = "";
+            String monedaDestino = "";
+
             System.out.println("""
                     ----------------------------------------------
                     "BIENVENIDO AL CONVERSOR DE MONEDAS"
@@ -26,43 +28,60 @@ public class MenuUsuario {
                     """);
             inputMenu = sc.nextLine();
 
-            if (inputMenu.equals("7")){
-                break;
-            }
+//            if (inputMenu.equals("7")||!inputMenu.matches(".*[1-6].*")){
+//                continue;
+//            }
 
+            if (inputMenu.equals("7")) {
+                continue;
+            } else if (!inputMenu.matches("[1-6]")) {
+                System.out.println("Input Erroneo, intentelo de nuevo \nPresione Enter para proseguir");
+                sc.nextLine();
+                continue;
+            }
             System.out.println("Ingrese cantidad a convertir: ");
             cantidadIngresada=sc.nextDouble();
             sc.nextLine();
 
+
+
             switch (inputMenu) {
                 case "1":
                     cantidadCalculada = calc.convertirUSDaARS(cantidadIngresada);
-                    System.out.println(cantidadIngresada + " USD = " + cantidadCalculada + " ARS ");
+                    monedaOrigen = "USD";
+                    monedaDestino = "ARS";
                     break;
                 case "2":
                     cantidadCalculada = calc.convertirARSaUSD(cantidadIngresada);
-                    System.out.println(cantidadIngresada + " ARS = " + cantidadCalculada + " USD ");
+                    monedaOrigen = "ARS";
+                    monedaDestino = "USD";
                     break;
                 case "3":
                     cantidadCalculada = calc.convertirUSDaBRL(cantidadIngresada);
-                    System.out.println(cantidadIngresada + " USD = " + cantidadCalculada + " BRL ");
+                    monedaOrigen = "USD";
+                    monedaDestino = "BRL";
                     break;
                 case "4":
                     cantidadCalculada = calc.convertirBRLaUSD(cantidadIngresada);
-                    System.out.println(cantidadIngresada + " BRL = " + cantidadCalculada + " USD ");
+                    monedaOrigen = "BRL";
+                    monedaDestino = "USD";
                     break;
                 case "5":
                     cantidadCalculada = calc.convertirUSDaCOP(cantidadIngresada);
-                    System.out.println(cantidadIngresada + " USD = " + cantidadCalculada + " COP ");
+                    monedaOrigen = "USD";
+                    monedaDestino = "COP";
                     break;
                 case "6":
                     cantidadCalculada = calc.convertirCOPaUSD(cantidadIngresada);
-                    System.out.println(cantidadIngresada + " COP = " + cantidadCalculada + " USD ");
+                    monedaOrigen = "COP";
+                    monedaDestino = "USD";
                     break;
                 default:
-                    System.out.println("Input erróneo en menu");
+                    System.out.println("Input erróneo en menú");
+                    continue;
             }
 
+            System.out.println(cantidadIngresada + " " + monedaOrigen + " = " + cantidadCalculada + " " + monedaDestino);
             System.out.println("Oprima Enter para continuar, o ingrese 7 para salir");
             inputMenu = sc.nextLine();
 
