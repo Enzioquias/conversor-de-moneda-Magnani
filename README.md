@@ -21,25 +21,25 @@ Este proyecto fue desarrollado por **Enzo Magnani** como parte del programa **ON
 
 ## 🧪 ¿Cómo usarlo?
 
-1. Ejecutá la clase `MenuUsuario`.
-2. Elegí la opción de conversión deseada (1 al 6).
-3. Ingresá la cantidad a convertir.
-4. Visualizá el resultado.
-5. Podés repetir el proceso o salir con la opción 7.
+1. Ejecuta la clase `Principal`.
+2. Elige la opción de conversión deseada (1 al 6).
+3. Ingresa la cantidad a convertir.
+4. Visualiza el resultado.
+5. Puedes repetir el proceso o salir con la opción 7.
 
 ---
 
-## ⚙️ Requisitos
+## ⚙️ Herramientas utilizadas
 
-- JDK 21 o superior.
-- IDE recomendado: IntelliJ IDEA.
-- Conexión a internet para consultar la API.
+- JDK 21.
+- IntelliJ IDEA.
 
 ---
 
 ## 📡 Fuente de datos
 
 Las tasas de conversión se obtienen en tiempo real desde [ExchangeRate API](https://www.exchangerate-api.com/).
+Estas se actualizan cada 24 horas. La app está limitada a 1500 requests mensuales, al utilizarse un plan Free.
 
 ---
 
